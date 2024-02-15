@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+users.json
+config.json
