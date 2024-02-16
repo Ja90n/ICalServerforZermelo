@@ -4,12 +4,12 @@ import java.util.HashMap;
 
 public class Users {
 
-    private HashMap<String, String> users; // School code + Auth code
+    private HashMap<String, String> users; // Auth code + School code
 
     public void setDefault() {
         users = new HashMap<>();
-        users.put("schoolcode1", "authcode1");
-        users.put("schoolcode2", "authcode2");
+        users.put("authcode1", "schoolcode1");
+        users.put("authcode2", "schoolcode2");
     }
 
     public HashMap<String, String> getUsers() {

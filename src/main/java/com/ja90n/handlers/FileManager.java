@@ -1,4 +1,4 @@
-package com.ja90n;
+package com.ja90n.handlers;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;

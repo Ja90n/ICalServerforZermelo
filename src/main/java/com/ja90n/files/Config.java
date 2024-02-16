@@ -1,20 +1,18 @@
 package com.ja90n.files;
 
-import java.util.HashMap;
-
 public class Config {
 
-    private boolean hoi;
+    private int port;
 
     public void setDefault() {
-        hoi = true;
+        port = 8001;
     }
 
-    public void setHoi(boolean hoi) {
-        this.hoi = hoi;
+    public void setPort(int port) {
+        this.port = port;
     }
 
-    public boolean isHoi() {
-        return hoi;
+    public int getPort() {
+        return port;
     }
 }
