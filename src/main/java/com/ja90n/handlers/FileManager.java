@@ -14,9 +14,7 @@ public class FileManager {
     private Users users;
 
     public FileManager() throws IOException {
-
         reload();
-
     }
 
     public void reload() throws IOException {

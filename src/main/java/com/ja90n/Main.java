@@ -14,4 +14,5 @@ public class Main {
     public static void getAccessesCode() throws ZermeloApiException {
         System.out.println(ZermeloAPI.getAccessToken("",""));
     }
+
 }

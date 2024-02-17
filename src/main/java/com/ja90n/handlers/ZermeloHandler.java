@@ -1,16 +1,12 @@
 package com.ja90n.handlers;
 
-import com.sun.net.httpserver.HttpServer;
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.model.component.VEvent;
-import net.fortuna.ical4j.model.component.VEventFactory;
-import net.fortuna.ical4j.model.component.VTimeZone;
 import nl.mrwouter.zermelo4j.ZermeloAPI;
 import nl.mrwouter.zermelo4j.api.ZermeloApiException;
 import nl.mrwouter.zermelo4j.appointments.Appointment;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -19,7 +15,7 @@ public class ZermeloHandler {
 
     private final ZermeloAPI zermeloUser;
 
-    public ZermeloHandler(ZermeloAPI zermeloAPI, HttpServer server) {
+    public ZermeloHandler(ZermeloAPI zermeloAPI) {
         zermeloUser = zermeloAPI;
         refreshCalender();
     }

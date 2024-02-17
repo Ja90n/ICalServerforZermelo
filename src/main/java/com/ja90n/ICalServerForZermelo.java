@@ -1,5 +1,6 @@
 package com.ja90n;
 
+import com.ja90n.files.User;
 import com.ja90n.handlers.FileManager;
 import com.ja90n.handlers.HttpHandler;
 import com.ja90n.handlers.ZermeloHandler;
@@ -10,7 +11,9 @@ import nl.mrwouter.zermelo4j.api.ZermeloApiException;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class ICalServerForZermelo {
 
@@ -32,17 +35,16 @@ public class ICalServerForZermelo {
     }
 
     public void startUp() {
-        HashMap<String, String> users = fileManager.getUsers().getUsers();
+        ArrayList<User> users = fileManager.getUsers().getUsers();
 
-        for (String authCode : users.keySet()) {
-            String schoolCode = users.get(authCode);
+        for (User user : users) {
 
-            ZermeloAPI zermeloUser = getZermeloUser(authCode, schoolCode);
+            ZermeloAPI zermeloUser = getZermeloUser(user.getAuthCode(), user.getSchoolCode());
             if (zermeloUser == null) continue;
 
-            ZermeloHandler zermeloHandler = new ZermeloHandler(zermeloUser, server);
+            ZermeloHandler zermeloHandler = new ZermeloHandler(zermeloUser);
             zermeloHandler.refreshCalender();
-            server.createContext("/" + zermeloUser.getAccessToken(), new HttpHandler(zermeloUser.getAccessToken(),zermeloHandler));
+            server.createContext("/" + user.getLinkPath(), new HttpHandler(zermeloUser.getAccessToken(),zermeloHandler));
         }
     }
 
