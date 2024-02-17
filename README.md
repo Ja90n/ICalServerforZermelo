@@ -1,6 +1,6 @@
 # ICalServerForZermelo
 
-A program to host an url of your [Zermelo](https://zermelo.nl/) schedule so that you can import it in an online agenda, for example Google Agenda.
+A program to host an url of your [Zermelo](https://zermelo.nl/) schedule so that you can import it in an online agenda, for example Google Agenda. You can host multiple people's schedules at once.
 
 ## Authors
 
